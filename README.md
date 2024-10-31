@@ -10,3 +10,28 @@
 ### Prerequsites:
 - aws cli
 - # Production_Level_CICD
+
+- Create 3 t2.medium machines for Jenkins Nexus SonarQube
+- Install Docker and run below commands
+```
+curl https://get.docker.com | bash
+sudo usermod -aG docker $USER
+sudo usermod -aG docker jenkins
+newgrp docker
+```
+- Restart Jenkins Server
+- Run Nexus and Sonarqube with Docker
+```
+docker run -d -p 9000:9000 sonarqube:lts-community
+```
+```
+docker run -d -p 8081:8081 sonatype/nexus3
+```
+```
+docker exec -it sonanexyx -it /bin/bash
+cat sonatype-work/nexus3/admin.password
+```
+- To access the cluster create the kubeconfig file with following command.
+```
+aws eks --region us-east-1 update-kubeconfig --name <cluster_name>
+```
