@@ -35,3 +35,14 @@ cat sonatype-work/nexus3/admin.password
 ```
 aws eks --region us-east-1 update-kubeconfig --name <cluster_name>
 ```
+
+### Jenkins Plugins
+- Pipeline:Stage View
+- Kubernetes
+- Kubernetes Client API
+- Kubernetes Credentials
+- Kubernetes CLI
+- SonarQube Scanner
+- Docker
+- Docker Pipeline
+- Config file provider
